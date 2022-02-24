@@ -1,0 +1,6 @@
+pandas
+numpy
+stravaio
+psycopg2
+pymongo
+datetime

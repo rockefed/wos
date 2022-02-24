@@ -1,0 +1,84 @@
+<html>
+<head>
+  <h1>
+    <a href="{{ url_for('index') }}"><button>Home</button></a>
+    <a href="{{ url_for('schedule') }}"><button>Scheduling</button></a>
+    <a href="{{ url_for('export') }}"><button>Export</button></a><br>
+    Exporting
+</h1>
+</head>
+<body>
+  <h3>Activities</h3>
+  <label for="acts_start_dt">Start Date:</label>
+  <input type="date" id="acts_start_dt">
+  <label for="acts_end_dt">End Date:</label>
+  <input type="date" id="acts_end_dt">
+  <p>State:</p>
+    <input type="radio" id="acts-state-proc">
+    <label for="acts-state-proc">Processed</label>
+
+    <input type="radio" id="acts-state-raw">
+    <label for="acts-state-raw">Raw</label><br><br>
+
+  <button>Export Activities</button>
+
+  <h3>Logs</h3>
+  <label for="logs_start_dt">Start Date:</label>
+  <input type="date" id="logs_start_dt">
+  <label for="logs_end_dt">End Date:</label>
+  <input type="date" id="logs_end_dt">
+
+  <p>Types:</p>
+    <input type="checkbox" id="acts-all-types">
+    <label for="acts-all-types">ALL</label>
+
+    <input type="checkbox" id="acts-api-get">
+    <label for="acts-api-get">API-GET</label>
+
+    <input type="checkbox" id="acts-api-post">
+    <label for="acts-api-post">API-POST</label>
+
+    <input type="checkbox" id="acts-db-select">
+    <label for="acts-db-select">DB-SELECT</label>
+
+    <input type="checkbox" id="acts-db-insert">
+    <label for="acts-db-insert">DB-INSERT</label>
+
+  <p>Statuses:</p>
+    <input type="checkbox" id="acts-all-stats">
+    <label for="acts-all-stats">ALL</label>
+
+    <input type="checkbox" id="acts-200-stats">
+    <label for="acts-200-stats">200</label>
+
+    <input type="checkbox" id="acts-404-stats">
+    <label for="acts-404-stats">404</label><br><br>
+  <button>Export Logs</button>
+  <h3>Activity Streams</h3>
+
+  <label for="streams_start_dt">Start Date:</label>
+  <input type="date" id="streams_start_dt">
+  <label for="streams_end_dt">End Date:</label>
+  <input type="date" id="streams_end_dt">
+
+  <p>Columns:</p>
+    <input type="checkbox" id="streams-all-cols">
+    <label for="streams_all_cols">ALL</label>
+
+    <input type="checkbox" id="streams-hr">
+    <label for="streams-hr">Heart Rate</label>
+
+    <input type="checkbox" id="streams-cad">
+    <label for="streams-cad">Cadence</label>
+
+    <input type="checkbox" id="streams-dist>
+    <label for="streams-dist>Distance</label>
+
+    <input type="checkbox" id="streams-eg">
+    <label for="streams-eg">Elevation Gain</label>
+
+    <input type="checkbox" id="streams-time">
+    <label for="streams-time">Time</label><br><br>
+  <button>Export Streams</button>
+</body>
+</html>
