@@ -1,3 +1,0 @@
-
-SUCCESS = 200
-FAILED = 400
