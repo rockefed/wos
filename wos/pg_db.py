@@ -2,6 +2,7 @@ import psycopg2
 import pandas as pd
 import numpy as np
 import config
+import os
 
 class pg_db:
     def __init__(self, host, db, usr, pwd):
@@ -48,7 +49,7 @@ class pg_db:
     def CheckApiThreshold(self):        
         self.ConnectToPostgres()  
         api_calls_15min = 0
-          api_calls_1day = 0
+        api_calls_1day = 0
         with self.conn: #THINK I NEED TO REMOVE THIS
             with self.conn.cursor() as curs:
                 curs.execute(config.SELECT_API_HITS_15M) # TODO: switch to curs.callproc()
@@ -75,7 +76,7 @@ class pg_db:
             cursor = self.conn.cursor() # Create a cursor
             
             for record in activities_df.itertuples(): # Loop through df, store each value in a temp var and then insert to postgres
-                athletes_values = (str(record.id), str(record.))
+                #athletes_values = (str(record.id), str(record.)) TODO
                 cursor.execute(config.ATHLETES_INSERT, athletes_values)
 
             self.CommitCloseFromPostgres() # Commit the inserts to the db & close the connection
@@ -91,7 +92,7 @@ class pg_db:
             cursor = self.conn.cursor() # Create a cursor
             
             for record in activities_df.itertuples(): # Loop through df, store each value in a temp var and then insert to postgres
-                activities_values = (str(record.id), str(record.))
+                #activities_values = (str(record.id), str(record.)) TODO
                 cursor.execute(config.ACTIVITIES_INSERT, activities_values)
 
             self.CommitCloseFromPostgres() # Commit the inserts to the db & close the connection
@@ -114,7 +115,7 @@ class pg_db:
             cursor = self.conn.cursor() # Create a cursor
             
             for record in streams_df.itertuples(): # Loop through df, store each value in a temp var and then insert to postgres
-                streams_values = (str(record.id), str(record.))
+                #streams_values = (str(record.id), str(record.)) TODO
                 cursor.execute(config.STREAMS_INSERT, streams_values)
 
             self.CommitCloseFromPostgres() # Commit the inserts to the db & close the connection
